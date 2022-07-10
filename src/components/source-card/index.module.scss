@@ -1,0 +1,32 @@
+.wrapper {
+  padding: 14px;
+  margin: 16px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 10%), 0 2px 4px -1px rgb(0 0 0 / 6%);
+
+  .title {
+    margin-bottom: 4px;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 24px;
+  }
+
+  .date {
+    margin-bottom: 8px;
+    font: {
+      size: 14px;
+      weight: 400;
+    }
+    color: #a9a0a8;
+  }
+
+  .guestWrapper {
+    margin-bottom: 8px;
+
+    .guest {
+      margin-right: 8px;
+      font-size: 14px;
+      border-bottom: 1px solid #e2e8f0;
+    }
+  }
+}

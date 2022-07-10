@@ -1,0 +1,14 @@
+@use '../../index.scss' as v;
+
+.wrapper {
+  padding: 0 4px;
+  height: 16px;
+  line-height: 16px;
+  font: {
+    size: 14px;
+    weight: 400;
+  }
+  color: #fff;
+  background-color: v.$secondary-color;
+  border-radius: 4px;
+}
