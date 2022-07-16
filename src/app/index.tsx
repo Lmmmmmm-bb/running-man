@@ -1,7 +1,7 @@
 import { FC, useEffect, useState } from 'react';
 import styles from './index.module.scss';
 import SourceCard from '@/components/source-card';
-import { source2010 } from '@/sources';
+import { source } from '@/sources';
 import { IRMSource } from '@/types';
 import { concatUrlQuery } from '@/utils';
 import { BASE_B_URL, CURRENT_KEY } from './config';
@@ -19,7 +19,8 @@ const App: FC = () => {
   useEffect(() => {
     const current = localStorage.getItem(CURRENT_KEY);
     if (!current) {
-      const url = concatUrlQuery(BASE_B_URL, source2010[0].sources[0]);
+      const [first] = source;
+      const url = concatUrlQuery(BASE_B_URL, first.sources[0]);
       setCurrentSource(url);
     }
   }, []);
@@ -32,7 +33,7 @@ const App: FC = () => {
     <div className={styles.wrapper}>
       <iframe className={styles.video} src={currentSource} allowFullScreen />
       <div className={styles.selector}>
-        {source2010.map((item) => (
+        {source.map((item) => (
           <SourceCard
             key={item.date}
             info={item}
