@@ -3,6 +3,12 @@
   margin: 16px;
   border-radius: 8px;
   box-shadow: 0 4px 6px -1px rgb(0 0 0 / 10%), 0 2px 4px -1px rgb(0 0 0 / 6%);
+  transition: box-shadow 0.2s ease-in-out;
+
+  &:hover {
+    box-shadow: 0 8px 12px -1px rgb(0 0 0 / 14%),
+      0 2px 4px -1px rgb(0 0 0 / 10%);
+  }
 
   .title {
     margin-bottom: 4px;
@@ -24,7 +30,9 @@
     margin-bottom: 8px;
 
     .guest {
+      display: inline-block;
       margin-right: 8px;
+      margin-bottom: 4px;
       font-size: 14px;
       border-bottom: 1px solid #e2e8f0;
     }
