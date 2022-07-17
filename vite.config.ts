@@ -4,6 +4,7 @@ import { resolve } from 'path';
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: '/Running-Man/',
   plugins: [react()],
   resolve: {
     alias: {
