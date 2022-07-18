@@ -1,9 +1,9 @@
 import { FC, useEffect, useState } from 'react';
-import styles from './index.module.scss';
 import SourceCard from '@/components/source-card';
 import { source } from '@/sources';
 import { IRMSource } from '@/types';
 import { concatUrlQuery } from '@/utils';
+import styles from './index.module.scss';
 import { BASE_B_URL, CURRENT_KEY } from './config';
 
 const App: FC = () => {
