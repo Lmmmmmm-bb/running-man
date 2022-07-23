@@ -1,9 +1,10 @@
-import { FC } from 'react';
+import { FC, useEffect } from 'react';
 import SourceCard from '@/components/source-card';
 import { source } from '@/sources';
 import { IRMInfo } from '@/types';
 import { useSource } from '@/common/hooks';
 import styles from './index.module.scss';
+import cardStyles from '@/components/source-card/index.module.scss';
 
 const App: FC = () => {
   const [currentSource, setCurrentSource, currentUrl] = useSource();
@@ -11,6 +12,11 @@ const App: FC = () => {
   const handleSourceChange = (info: IRMInfo, index: number) => {
     setCurrentSource({ info, index });
   };
+
+  useEffect(() => {
+    const el = document.querySelector(`.${cardStyles.selected}`);
+    el && el.scrollIntoView();
+  }, []);
 
   return (
     <div className={styles.wrapper}>
