@@ -3,8 +3,8 @@ import SourceCard from '@/components/source-card';
 import { source } from '@/sources';
 import { IRMInfo } from '@/types';
 import { useSource } from '@/common/hooks';
-import styles from './index.module.scss';
 import cardStyles from '@/components/source-card/index.module.scss';
+import styles from './index.module.scss';
 
 const App: FC = () => {
   const [currentSource, setCurrentSource, currentUrl] = useSource();
