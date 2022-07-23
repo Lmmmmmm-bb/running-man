@@ -15,7 +15,7 @@ const App: FC = () => {
 
   useEffect(() => {
     const el = document.querySelector(`.${cardStyles.selected}`);
-    el && el.scrollIntoView();
+    el && el.scrollIntoView({ behavior: 'smooth', block: 'center' });
   }, []);
 
   return (
