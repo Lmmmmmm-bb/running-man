@@ -1,19 +1,20 @@
 import { FC } from 'react';
-import { IRMInfo, IRMSource } from '@/types';
+import { IRMInfo } from '@/types';
 import EpisodeTag from '../episode-tag';
 import SourceButton from '../source-button';
 import styles from './index.module.scss';
 
 interface ISourceCardProps {
   info: IRMInfo;
-  onSourceChange: (source: IRMSource) => void;
+  selected: boolean;
+  onSourceChange: (current: IRMInfo, index: number) => void;
 }
 
 const SourceCard: FC<ISourceCardProps> = (props) => {
-  const { info, onSourceChange } = props;
+  const { info, selected, onSourceChange } = props;
 
   return (
-    <div className={styles.wrapper}>
+    <div className={`${styles.wrapper} ${selected && styles.selected}`}>
       <h3 className={styles.title}>
         <EpisodeTag episode={info.episode} />
         <span style={{ marginLeft: 8 }}>{info.title}</span>
@@ -32,7 +33,7 @@ const SourceCard: FC<ISourceCardProps> = (props) => {
         {info.sources.map((source, index) => (
           <SourceButton
             key={`${source.bvid}&${source.page}`}
-            onClick={() => onSourceChange(source)}
+            onClick={() => onSourceChange(info, index)}
           >
             {`源 ${index + 1}`}
           </SourceButton>
