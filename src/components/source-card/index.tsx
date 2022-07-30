@@ -3,6 +3,7 @@ import { IRMInfo } from '@/types';
 import EpisodeTag from '../episode-tag';
 import SourceButton from '../source-button';
 import styles from './index.module.scss';
+import { clsx } from 'clsx';
 
 interface ISourceCardProps {
   info: IRMInfo;
@@ -14,7 +15,7 @@ const SourceCard: FC<ISourceCardProps> = (props) => {
   const { info, selected, onSourceChange } = props;
 
   return (
-    <div className={`${styles.wrapper} ${selected && styles.selected}`}>
+    <div className={clsx([styles.wrapper], { [styles.selected]: selected })}>
       <h3 className={styles.title}>
         <EpisodeTag episode={info.episode} />
         <span style={{ marginLeft: 8 }}>{info.title}</span>
