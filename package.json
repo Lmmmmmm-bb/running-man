@@ -19,6 +19,7 @@
     "style:watch": "pnpm typed-scss-modules src --watch --ignore \"**/index.scss\""
   },
   "dependencies": {
+    "clsx": "^1.2.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "reset-css": "^5.0.1",
